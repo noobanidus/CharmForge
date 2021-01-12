@@ -14,6 +14,7 @@ import net.minecraft.inventory.container.ClickType;
 import net.minecraft.inventory.container.Slot;
 import net.minecraft.item.FilledMapItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Matrix4f;
 import net.minecraft.util.math.vector.Vector3f;
@@ -154,7 +155,7 @@ public class AtlasScreen extends AbstractCharmContainerScreen<AtlasContainer> {
 
     @Override
     protected void handleMouseClick(Slot slotIn, int slotId, int mouseButton, ClickType type) {
-        if (type == ClickType.QUICK_MOVE) {
+        if (type == ClickType.QUICK_MOVE && slotIn.getStack().getItem() == Items.FILLED_MAP) {
             Charm.PACKET_HANDLER.sendToServer(new ServerAtlasTransfer(slot, slotIn.getSlotIndex(), -1, MoveMode.FROM_INVENTORY));
         } else {
             super.handleMouseClick(slotIn, slotId, mouseButton, type);
