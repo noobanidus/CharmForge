@@ -4,7 +4,7 @@
     "ingredient": {
       "item": "minecraft:VARIANT_planks"
     },
-    "result": "charm:VARIANT_ladder",
+    "result": "quark:VARIANT_ladder",
     "count": 4,
     "conditions": [
       {
@@ -12,7 +12,7 @@
         "values": [
           {
             "type": "charm:module_enabled",
-            "module": "charm:variant_ladders"
+            "module": "quark:building.module.variant_ladders_module"
           },
           {
             "type": "charm:module_enabled",
@@ -22,5 +22,5 @@
       }
     ]
   },
-  "variants": "wood"
+  "variants": "overworld_wood"
 }

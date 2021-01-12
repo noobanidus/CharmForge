@@ -4,15 +4,15 @@
     "ingredient": {
       "item": "minecraft:VARIANT_planks"
     },
-    "result": "charm:VARIANT_ladder",
-    "count": 4,
+    "result": "quark:vertical_VARIANT_planks",
+    "count": 1,
     "conditions": [
       {
         "type": "forge:and",
         "values": [
           {
             "type": "charm:module_enabled",
-            "module": "charm:variant_ladders"
+            "module": "quark:building.module.vertical_slabs_module"
           },
           {
             "type": "charm:module_enabled",

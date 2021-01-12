@@ -2,26 +2,25 @@
   "template": {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-      "# #",
-      "#P#",
-      "# #"
+      "###",
+      "#X#",
+      "###"
     ],
     "key": {
       "#": {
-        "item": "minecraft:stick"
-      },
-      "P": {
         "item": "minecraft:VARIANT_planks"
+      },
+      "X": {
+        "item": "charm:VARIANT_bookshelf"
       }
     },
     "result": {
-      "item": "charm:VARIANT_ladder",
-      "count": 3
+      "item": "charm:VARIANT_bookcase"
     },
     "conditions": [
       {
         "type": "charm:module_enabled",
-        "module": "charm:variant_ladders"
+        "module": "charm:bookcases"
       }
     ]
   },

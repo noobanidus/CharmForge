@@ -103,11 +103,16 @@ processResources {
 		expand 'mod_version': project.version
 	}
 
+	exclude("META-INF/*.variants")
+
 	//expand resource templates
 	filesMatching("**/*.template.json") {
 		JsonBuilder json = new JsonBuilder(new JsonSlurper().parseText(it.file.text))
 		String template = new JsonBuilder(json.content.template).toPrettyString()
-		Iterable<String> variants = json.content.variants
+		def v = json.content.variants
+		Iterable<String> variants
+		if (v instanceof String) variants = file("${sourceSets.main.resources.srcDirs[0]}/META-INF/${v}.variants").readLines().findAll { !it.isEmpty() }
+		else variants = v
 		File dir = it.relativePath.parent.getFile(file("$buildDir/resources/main"))
 		dir.mkdirs()
 		String name = it.name.replace(".template.json", ".json")

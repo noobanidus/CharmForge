@@ -1,0 +1,45 @@
+{
+  "template": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "###",
+      "#X#",
+      "###"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:VARIANT_planks"
+      },
+      "X": {
+        "item": "quark:VARIANT_bookshelf"
+      }
+    },
+    "result": {
+      "item": "charm:VARIANT_bookcase"
+    },
+    "conditions": [
+      {
+        "type": "forge:and",
+        "values": [
+          {
+            "type": "charm:module_enabled",
+            "module": "charm:bookcases"
+          },
+          {
+            "type": "forge:mod_loaded",
+            "modid": "quark"
+          }
+        ]
+      }
+    ]
+  },
+  "variants": [
+    "acacia",
+    "birch",
+    "crimson",
+    "dark_oak",
+    "jungle",
+    "spruce",
+    "warped"
+  ]
+}

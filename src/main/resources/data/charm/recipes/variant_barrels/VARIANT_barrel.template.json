@@ -2,26 +2,25 @@
   "template": {
     "type": "minecraft:crafting_shaped",
     "pattern": [
-      "# #",
-      "#P#",
-      "# #"
+      "PSP",
+      "P P",
+      "PSP"
     ],
     "key": {
-      "#": {
-        "item": "minecraft:stick"
+      "S": {
+        "item": "minecraft:VARIANT_slab"
       },
       "P": {
         "item": "minecraft:VARIANT_planks"
       }
     },
     "result": {
-      "item": "charm:VARIANT_ladder",
-      "count": 3
+      "item": "charm:VARIANT_barrel"
     },
     "conditions": [
       {
         "type": "charm:module_enabled",
-        "module": "charm:variant_ladders"
+        "module": "charm:variant_barrels"
       }
     ]
   },
