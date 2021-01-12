@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:woodcutting",
+  "ingredient": {
+    "item": "minecraft:TYPE_log"
+  },
+  "result": "minecraft:TYPE_planks",
+  "count": 4,
+  "conditions": [
+    {
+      "type": "charm:module_enabled",
+      "module": "charm:woodcutters"
+    }
+  ]
+}

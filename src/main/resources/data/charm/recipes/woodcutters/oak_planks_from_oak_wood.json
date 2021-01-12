@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:woodcutting",
+  "ingredient": {
+    "item": "minecraft:oak_wood"
+  },
+  "result": "minecraft:oak_planks",
+  "count": 4,
+  "conditions": [
+    {
+      "type": "charm:module_enabled",
+      "module": "charm:woodcutters"
+    }
+  ]
+}

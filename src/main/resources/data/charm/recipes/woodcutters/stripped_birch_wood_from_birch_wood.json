@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:woodcutting",
+  "ingredient": {
+    "item": "minecraft:birch_wood"
+  },
+  "result": "minecraft:stripped_birch_wood",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "charm:module_enabled",
+      "module": "charm:woodcutters"
+    }
+  ]
+}

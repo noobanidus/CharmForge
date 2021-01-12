@@ -38,6 +38,11 @@ copy_replace "${RECIPES}/fence_gate_from_planks.json" "${DATAROOT}/recipes/woodc
 copy_replace "${RECIPES}/sign_from_planks.json" "${DATAROOT}/recipes/woodcutters/${TYPE}_sign_from_${TYPE}_planks.json"
 copy_replace "${RECIPES}/slab_from_planks.json" "${DATAROOT}/recipes/woodcutters/${TYPE}_slab_from_${TYPE}_planks.json"
 copy_replace "${RECIPES}/stairs_from_planks.json" "${DATAROOT}/recipes/woodcutters/${TYPE}_stairs_from_${TYPE}_planks.json"
+copy_replace "${RECIPES}/planks_from_log.json" "${DATAROOT}/recipes/woodcutters/${TYPE}_planks_from_${TYPE}_log.json"
+copy_replace "${RECIPES}/planks_from_wood.json" "${DATAROOT}/recipes/woodcutters/${TYPE}_planks_from_${TYPE}_wood.json"
+copy_replace "${RECIPES}/stripped_log_from_log.json" "${DATAROOT}/recipes/woodcutters/stripped_${TYPE}_log_from_${TYPE}_log.json"
+copy_replace "${RECIPES}/stripped_wood_from_wood.json" "${DATAROOT}/recipes/woodcutters/stripped_${TYPE}_wood_from_${TYPE}_wood.json"
+copy_replace "${RECIPES}/wood_from_log.json" "${DATAROOT}/recipes/woodcutters/${TYPE}_wood_from_${TYPE}_log.json"
 
 # there are no crimson or warped boats
 if [[ "${TYPE}" != "crimson" ]] && [[ "${TYPE}" != "warped" ]]; then

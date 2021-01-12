@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:woodcutting",
+  "ingredient": {
+    "item": "minecraft:crimson_hyphae"
+  },
+  "result": "minecraft:stripped_crimson_hyphae",
+  "count": 1,
+  "conditions": [
+    {
+      "type": "charm:module_enabled",
+      "module": "charm:woodcutters"
+    }
+  ]
+}
