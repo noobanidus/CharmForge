@@ -1,0 +1,38 @@
+{
+  "template": {
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      "# #",
+      "#P#",
+      "# #"
+    ],
+    "key": {
+      "#": {
+        "item": "minecraft:stick"
+      },
+      "P": {
+        "item": "minecraft:VARIANT_planks"
+      }
+    },
+    "result": {
+      "item": "charm:VARIANT_ladder",
+      "count": 3
+    },
+    "conditions": [
+      {
+        "type": "charm:module_enabled",
+        "module": "charm:variant_ladders"
+      }
+    ]
+  },
+  "variants": [
+    "acacia",
+    "birch",
+    "crimson",
+    "dark_oak",
+    "jungle",
+    "oak",
+    "spruce",
+    "warped"
+  ]
+}

@@ -1,3 +1,6 @@
+import groovy.json.JsonBuilder
+import groovy.json.JsonSlurper
+
 buildscript {
 	repositories {
 		maven { url = 'https://files.minecraftforge.net/maven' }
@@ -96,16 +99,24 @@ mixin {
 
 processResources {
 	// replace stuff in mcmod.info, nothing else
-	from(sourceSets.main.resources.srcDirs) {
-		include 'META-INF/mods.toml'
-
-		// replace version and mcversion
+	filesMatching("META-INF/mods.toml") {
 		expand 'mod_version': project.version
 	}
 
-	// copy everything else, thats not the mods.toml
-	from(sourceSets.main.resources.srcDirs) {
-		exclude 'META-INF/mods.toml', '**/psd/**'
+	//expand resource templates
+	filesMatching("**/*.template.json") {
+		JsonBuilder json = new JsonBuilder(new JsonSlurper().parseText(it.file.text))
+		String template = new JsonBuilder(json.content.template).toPrettyString()
+		Iterable<String> variants = json.content.variants
+		File dir = it.relativePath.parent.getFile(file("$buildDir/resources/main"))
+		dir.mkdirs()
+		String name = it.name.replace(".template.json", ".json")
+		for (variant in variants) {
+			def file = new File(dir, name.replace("VARIANT", variant))
+			file.createNewFile()
+			file.text = template.replace("VARIANT", variant)
+		}
+		it.exclude()
 	}
 }
 
