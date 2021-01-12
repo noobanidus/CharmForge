@@ -33,13 +33,5 @@
       }
     ]
   },
-  "variants": [
-    "acacia",
-    "birch",
-    "crimson",
-    "dark_oak",
-    "jungle",
-    "spruce",
-    "warped"
-  ]
+  "variants": "wood_no_oak"
 }
