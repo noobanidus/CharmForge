@@ -9,6 +9,7 @@
     "AnvilBlockMixin",
     "BarrelTileEntityMixin",
     "BeaconTileEntityMixin",
+    "BlockMixin",
     "BrewingRecipeRegistryMixin",
     "CampfireBlockMixin",
     "CartographyContainerMixin",
@@ -65,8 +66,8 @@
   "client": [
     "AnvilScreenMixin",
     "BipedArmorLayerMixin",
-    "ClientRecipeBookMixin",
     "CartographyTableScreenMixin",
+    "ClientRecipeBookMixin",
     "ElytraLayerMixin",
     "GrindstoneScreenMixin",
     "ItemRendererMixin",
