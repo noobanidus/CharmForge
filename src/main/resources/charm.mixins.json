@@ -24,6 +24,7 @@
     "MineshaftPiecesMixin",
     "PistonBlockMixin",
     "PlayerEntityMixin",
+    "PlayerInteractionManagerMixin",
     "PortalSizeMixin",
     "PotionItemMixin",
     "RecipeManagerMixin",
@@ -65,8 +66,8 @@
   "client": [
     "AnvilScreenMixin",
     "BipedArmorLayerMixin",
-    "ClientRecipeBookMixin",
     "CartographyTableScreenMixin",
+    "ClientRecipeBookMixin",
     "ElytraLayerMixin",
     "GrindstoneScreenMixin",
     "ItemRendererMixin",
