@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#charm:chests",
+    "#charm:chests/wooden",
     "#charm:barrels",
     "#charm:crates"
   ]
