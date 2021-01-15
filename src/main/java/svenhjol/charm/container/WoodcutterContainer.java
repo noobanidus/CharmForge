@@ -201,7 +201,7 @@ public class WoodcutterContainer extends Container {
                 if (!this.mergeItemStack(itemstack1, 2, 38, false)) {
                     return ItemStack.EMPTY;
                 }
-            } else if (this.world.getRecipeManager().getRecipe(IRecipeType.STONECUTTING, new Inventory(itemstack1), this.world).isPresent()) {
+            } else if (this.world.getRecipeManager().getRecipe(Woodcutters.RECIPE_TYPE, new Inventory(itemstack1), this.world).isPresent()) {
                 if (!this.mergeItemStack(itemstack1, 0, 1, false)) {
                     return ItemStack.EMPTY;
                 }

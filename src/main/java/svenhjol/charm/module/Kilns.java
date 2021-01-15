@@ -18,7 +18,7 @@ import svenhjol.charm.tileentity.KilnTileEntity;
 
 @Module(mod = Charm.MOD_ID, client = KilnsClient.class, description = "A functional block that speeds up cooking of clay, bricks and terracotta.")
 public class Kilns extends CharmModule {
-    public static ResourceLocation RECIPE_ID = new ResourceLocation("firing");
+    public static ResourceLocation RECIPE_ID = new ResourceLocation(Charm.MOD_ID, "firing");
     public static ResourceLocation BLOCK_ID = new ResourceLocation(Charm.MOD_ID, "kiln");
     public static KilnBlock KILN;
     public static TileEntityType<KilnTileEntity> BLOCK_ENTITY;

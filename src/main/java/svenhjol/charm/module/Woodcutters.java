@@ -15,7 +15,7 @@ import svenhjol.charm.recipe.WoodcuttingRecipe;
 
 @Module(mod = Charm.MOD_ID, client = WoodCuttersClient.class, description = "A functional block that adds more efficient recipes for crafting wooden stairs and slabs.")
 public class Woodcutters extends CharmModule {
-    public static ResourceLocation RECIPE_ID = new ResourceLocation("woodcutting");
+    public static ResourceLocation RECIPE_ID = new ResourceLocation(Charm.MOD_ID, "woodcutting");
     public static ResourceLocation BLOCK_ID = new ResourceLocation(Charm.MOD_ID, "woodcutter");
     public static WoodcutterBlock WOODCUTTER;
     public static ContainerType<WoodcutterContainer> SCREEN_HANDLER;

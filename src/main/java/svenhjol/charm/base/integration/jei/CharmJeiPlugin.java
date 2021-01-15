@@ -4,8 +4,7 @@ import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaRecipeCategoryUid;
 import mezz.jei.api.recipe.vanilla.IVanillaRecipeFactory;
-import mezz.jei.api.registration.IRecipeCategoryRegistration;
-import mezz.jei.api.registration.IRecipeRegistration;
+import mezz.jei.api.registration.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -13,6 +12,8 @@ import net.minecraft.item.crafting.RecipeManager;
 import net.minecraft.util.ResourceLocation;
 import svenhjol.charm.Charm;
 import svenhjol.charm.base.handler.ModuleHandler;
+import svenhjol.charm.container.KilnContainer;
+import svenhjol.charm.gui.KilnScreen;
 import svenhjol.charm.module.DecreaseRepairCost;
 import svenhjol.charm.module.Kilns;
 import svenhjol.charm.module.NetheriteNuggets;
@@ -87,4 +88,21 @@ public class CharmJeiPlugin implements IModPlugin {
         registration.addRecipes(recipes, VanillaRecipeCategoryUid.ANVIL);
     }
 
+    @Override
+    public void registerGuiHandlers(IGuiHandlerRegistration registration) {
+        registration.addRecipeClickArea(KilnScreen.class, 78, 32, 28, 23,
+                FiringRecipeCategory.UID, VanillaRecipeCategoryUid.FUEL);
+    }
+
+    @Override
+    public void registerRecipeTransferHandlers(IRecipeTransferRegistration registration) {
+        registration.addRecipeTransferHandler(KilnContainer.class, FiringRecipeCategory.UID, 0, 1, 3, 36);
+        registration.addRecipeTransferHandler(KilnContainer.class, VanillaRecipeCategoryUid.FUEL, 1, 1, 3, 36);
+    }
+
+    @Override
+    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
+        registration.addRecipeCatalyst(new ItemStack(Kilns.KILN), FiringRecipeCategory.UID, VanillaRecipeCategoryUid.FUEL);
+        registration.addRecipeCatalyst(new ItemStack(Woodcutters.WOODCUTTER), WoodCuttingRecipeCategory.UID);
+    }
 }
