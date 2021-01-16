@@ -1,5 +1,12 @@
 # Changelog
 
+## 2.3.1
+* Acquisition compatibility fixes
+* Added missing tag for variant chests guarded by piglins
+* Fix some variant pig textures not being shown
+* Fix forge tags for variant chests #18
+* Fix bookcase filter #32
+
 ## 2.3.0
 * Added improved atlases (F43nd1r)
 * Added player pressure plates (F43nd1r)
