@@ -7,9 +7,12 @@ import net.minecraft.world.World;
 import svenhjol.charm.Charm;
 import svenhjol.charm.base.CharmModule;
 import svenhjol.charm.base.handler.ModuleHandler;
+import svenhjol.charm.base.helper.EnchantmentsHelper;
 import svenhjol.charm.base.helper.PlayerHelper;
 import svenhjol.charm.base.iface.Module;
 import svenhjol.charm.enchantment.AcquisitionEnchantment;
+
+import java.util.List;
 
 @Module(mod = Charm.MOD_ID, description = "Tools with the Acquisition enchantment automatically pick up drops.")
 public class Acquisition extends CharmModule {
@@ -21,16 +24,14 @@ public class Acquisition extends CharmModule {
         ACQUISITION = new AcquisitionEnchantment(this);
     }
 
-    public static void startBreaking(PlayerEntity player) {
-        if (ModuleHandler.enabled(Acquisition.class)) {
+    public static void startBreaking(PlayerEntity player, ItemStack tool) {
+        if (ModuleHandler.enabled(Acquisition.class) && EnchantmentsHelper.has(tool, ACQUISITION)) {
             breakingPlayer.set(player);
         }
     }
 
     public static void stopBreaking() {
-        if (ModuleHandler.enabled(Acquisition.class)) {
-            breakingPlayer.remove();
-        }
+        breakingPlayer.remove();
     }
 
     public static boolean trySpawnToInventory(World world, ItemStack stack) {
@@ -41,6 +42,14 @@ public class Acquisition extends CharmModule {
                 PlayerHelper.addOrDropStack(player, stack);
                 return true;
             }
+        }
+        return false;
+    }
+
+    public static boolean trySpawnToInventory(PlayerEntity player, ItemStack tool, List<ItemStack> stacks) {
+        if (ModuleHandler.enabled(Acquisition.class) && EnchantmentsHelper.has(tool, ACQUISITION)) {
+            stacks.forEach(it -> PlayerHelper.addOrDropStack(player, it));
+            return true;
         }
         return false;
     }

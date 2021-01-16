@@ -16,7 +16,7 @@ public class PlayerInteractionManagerMixin {
 
     @Inject(method = "tryHarvestBlock", at = @At("HEAD"))
     private void hookTryBreakBlockBegin(BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        Acquisition.startBreaking(player);
+        Acquisition.startBreaking(player, player.getHeldItemMainhand());
     }
 
     @Inject(method = "tryHarvestBlock", at = @At("TAIL"))

@@ -30,6 +30,7 @@
     "RecipeManagerMixin",
     "RepairContainerMixin",
     "ServerWorldMixin",
+    "ShearsItemMixin",
     "ShulkerBoxSlotMixin",
     "ShulkerBoxTileEntityMixin",
     "SingleJigsawPieceMixin",
