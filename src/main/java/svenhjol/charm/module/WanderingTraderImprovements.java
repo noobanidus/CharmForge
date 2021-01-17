@@ -89,9 +89,8 @@ public class WanderingTraderImprovements extends CharmModule {
     public static class StructureMapForEmeraldsTrade implements VillagerTrades.ITrade {
         @Override
         public MerchantOffer getOffer(Entity trader, Random rand) {
-            TraderMap traderMap = traderMaps.get(rand.nextInt(traderMaps.size()));
-
-            if (!trader.world.isRemote) {
+            if (!trader.world.isRemote && !traderMaps.isEmpty()) {
+                TraderMap traderMap = traderMaps.get(rand.nextInt(traderMaps.size()));
                 ItemStack map = traderMap.getMap((ServerWorld) trader.world, trader.getPosition());
                 if (map != null) {
                     ItemStack in1 = new ItemStack(Items.EMERALD, traderMap.getCost(rand));
