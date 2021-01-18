@@ -30,16 +30,12 @@ public class ModuleHandler {
 
     public static Map<String, CharmModule> LOADED_MODULES = new ConcurrentHashMap<>();
     public static final Map<String, CharmLoader> LOADER_INSTANCES = new HashMap<>();
-
-    public static final IEventBus MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
     public static final IEventBus FORGE_EVENT_BUS = MinecraftForge.EVENT_BUS;
 
     public static ModuleHandler INSTANCE = new ModuleHandler();
 
     public ModuleHandler() {
         // register forge events
-        MOD_EVENT_BUS.addListener(this::onCommonSetup);
-        MOD_EVENT_BUS.addListener(this::onModConfig);
         FORGE_EVENT_BUS.addListener(this::onServerAboutToStart);
 
         CONFIG_HANDLER = new ConfigHandler();
@@ -49,10 +45,14 @@ public class ModuleHandler {
 
     public void addLoader(CharmLoader loader) {
         String modId = loader.getModId();
+        IEventBus MOD_EVENT_BUS = FMLJavaModLoadingContext.get().getModEventBus();
 
         // create loader reference
         LOADER_INSTANCES.put(modId, loader);
 
+        //subscribe self to mod events
+        MOD_EVENT_BUS.addListener(this::onCommonSetup);
+        MOD_EVENT_BUS.addListener(this::onModConfig);
         // subscribe the loader to forge events
         MOD_EVENT_BUS.addListener(loader::onCommonSetup);
         MOD_EVENT_BUS.addListener(loader::onModConfig);
