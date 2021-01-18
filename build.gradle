@@ -71,6 +71,7 @@ dependencies {
 	//compile fg.deobf("curse.maven:buzzier-bees:3154937")
 
 	//compile fg.deobf("enchantedwolves:enchantedwolves:1.1.0.1")
+	//compile fg.deobf("CraftingTweaks:CraftingTweaks:1.16.3-12.2.0")
 }
 
 repositories {
