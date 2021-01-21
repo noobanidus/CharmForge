@@ -14,7 +14,7 @@ import java.util.function.Function;
 
 public abstract class BaseGenerator {
     @Nullable
-    protected static JigsawPattern registerPool(ResourceLocation startPool, List<BaseStructure> structures) {
+    protected static JigsawPattern registerPool(ResourceLocation startPool, List<BaseStructure> structures, JigsawPattern.PlacementBehaviour projection) {
         if (structures.isEmpty())
             return emptyPool(startPool);
 
@@ -30,9 +30,14 @@ public abstract class BaseGenerator {
                 startPool,
                 new ResourceLocation("empty"),
                 ImmutableList.copyOf(starts),
-                JigsawPattern.PlacementBehaviour.RIGID
+                projection
             )
         );
+    }
+
+    @Nullable
+    protected static JigsawPattern registerPool(ResourceLocation startPool, List<BaseStructure> strutures) {
+        return registerPool(startPool, strutures, JigsawPattern.PlacementBehaviour.RIGID);
     }
 
     protected static JigsawPattern emptyPool(ResourceLocation poolName) {

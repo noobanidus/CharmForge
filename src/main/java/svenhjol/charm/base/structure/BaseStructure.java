@@ -33,7 +33,7 @@ public abstract class BaseStructure {
         starts.add(Pair.of(JigsawPiece.func_242861_b(getPiecePath(pieceName), ProcessorLists.field_244101_a), weight));
     }
 
-    protected void registerPool(String poolName, Map<String, Integer> elements) {
+    protected void registerPool(String poolName, Map<String, Integer> elements, JigsawPattern.PlacementBehaviour projection) {
         final List<Pair<Function<JigsawPattern.PlacementBehaviour, ? extends JigsawPiece>, Integer>> pieces = new ArrayList<>();
 
         elements.forEach((piece, weight) ->
@@ -43,8 +43,12 @@ public abstract class BaseStructure {
             getPoolPath(poolName),
             getPoolPath("ends"),
             ImmutableList.copyOf(pieces),
-            JigsawPattern.PlacementBehaviour.RIGID
+            projection
         ));
+    }
+
+    protected void registerPool(String poolName, Map<String, Integer> elements) {
+        registerPool(poolName, elements, JigsawPattern.PlacementBehaviour.RIGID);
     }
 
     protected String getPiecePath(String piece) {

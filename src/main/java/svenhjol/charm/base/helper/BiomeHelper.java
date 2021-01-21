@@ -8,22 +8,10 @@ import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeManager;
 import net.minecraft.world.server.ServerWorld;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class BiomeHelper {
-    public static List<RegistryKey<Biome>> BADLANDS = new ArrayList<>();
-    public static List<RegistryKey<Biome>> DESERT = new ArrayList<>();
-    public static List<RegistryKey<Biome>> END = new ArrayList<>();
-    public static List<RegistryKey<Biome>> FOREST = new ArrayList<>();
-    public static List<RegistryKey<Biome>> JUNGLE = new ArrayList<>();
-    public static List<RegistryKey<Biome>> MOUNTAINS = new ArrayList<>();
-    public static List<RegistryKey<Biome>> NETHER = new ArrayList<>();
-    public static List<RegistryKey<Biome>> PLAINS = new ArrayList<>();
-    public static List<RegistryKey<Biome>> SAVANNA = new ArrayList<>();
-    public static List<RegistryKey<Biome>> SNOWY = new ArrayList<>();
-    public static List<RegistryKey<Biome>> TAIGA = new ArrayList<>();
+    public static Map<Biome.Category, List<RegistryKey<Biome>>> BIOME_CATEGORY_MAP = new HashMap<>();
 
     public static Biome getBiome(ServerWorld world, BlockPos pos) {
         BiomeManager biomeAccess = world.getBiomeManager();
