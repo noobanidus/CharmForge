@@ -13,6 +13,7 @@ import svenhjol.charm.base.helper.ScreenHelper;
 
 public class InventoryButtonClient extends CharmClientModule {
     public ImageButton recipeButton;
+    private boolean hasHiddenRecipeButton = false;
     public PortableCraftingClient portableCraftingClient;
     public PortableEnderChestClient portableEnderChestClient;
 
@@ -52,22 +53,28 @@ public class InventoryButtonClient extends CharmClientModule {
         if (portableCraftingClient != null && portableCraftingClient.isButtonVisible()) {
             if (portableEnderChestClient.isButtonVisible()) {
                 // recipe, crafting and chest buttons
-                if (this.recipeButton != null)
+                if (this.recipeButton != null) {
                     this.recipeButton.visible = false;
+                    hasHiddenRecipeButton = true;
+                }
                 portableCraftingClient.craftingButton.setPosition(left + 104, portableCraftingClient.craftingButton.y);
                 portableEnderChestClient.chestButton.setPosition(left + 130, portableEnderChestClient.chestButton.y);
 
             } else {
                 // just the recipe and crafting buttons
-                if (this.recipeButton != null)
+                if (this.recipeButton != null && hasHiddenRecipeButton) {
                     this.recipeButton.visible = true;
+                    hasHiddenRecipeButton = false;
+                }
                 portableCraftingClient.craftingButton.setPosition(left + 130, portableCraftingClient.craftingButton.y);
 
             }
         } else if (portableEnderChestClient != null && portableEnderChestClient.isButtonVisible()) {
             // just the recipe and chest buttons
-            if (this.recipeButton != null)
+            if (this.recipeButton != null && hasHiddenRecipeButton) {
                 this.recipeButton.visible = true;
+                hasHiddenRecipeButton = false;
+            }
             portableEnderChestClient.chestButton.setPosition(left + 130, portableEnderChestClient.chestButton.y);
         }
     }

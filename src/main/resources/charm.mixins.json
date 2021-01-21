@@ -78,6 +78,8 @@
     "RenderTypeMixin",
     "WorldRendererMixin",
     "accessor.ContainerScreenAccessor",
+    "accessor.LayerRendererAccessor",
+    "accessor.LivingRendererAccessor",
     "accessor.MinecraftAccessor",
     "accessor.RenderStateAccessor",
     "accessor.RenderTypeAccessor",

@@ -20,6 +20,7 @@ import svenhjol.charm.Charm;
 import svenhjol.charm.base.CharmClientModule;
 import svenhjol.charm.base.CharmModule;
 import svenhjol.charm.base.CharmResources;
+import svenhjol.charm.base.CharmTags;
 import svenhjol.charm.message.ServerOpenCrafting;
 import svenhjol.charm.module.PortableCrafting;
 
@@ -86,7 +87,7 @@ public class PortableCraftingClient extends CharmClientModule {
     }
 
     private boolean hasCrafting(PlayerEntity player) {
-        return player.inventory.hasItemStack(new ItemStack(Blocks.CRAFTING_TABLE));
+        return player.inventory.hasTag(CharmTags.CRAFTING_TABLES);
     }
 
     private void triggerOpenCraftingTable() {
