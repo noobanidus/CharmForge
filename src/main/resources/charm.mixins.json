@@ -16,7 +16,6 @@
     "ChickenEntityMixin",
     "ChorusFruitItemMixin",
     "ComposterBlockMixin",
-    "GravityStructureProcessorMixin",
     "GrindstoneContainerMixin",
     "HuskEntityMixin",
     "InventoryTransferHandlerMixin",
