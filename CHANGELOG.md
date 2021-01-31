@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.3.2
+* Support recipe button hidden by other mods #24
+* Support for other mod renderlayers #23
+* Crafting table tags #47
+* Woodcutter and kiln recipe namespaces are now "charm" not "minecraft"
+* Atlas renders properly left-handedly
+* Disabled oak bookshelf recipe
+
 ## 2.3.1
 * Acquisition compatibility fixes
 * Added missing tag for variant chests guarded by piglins
