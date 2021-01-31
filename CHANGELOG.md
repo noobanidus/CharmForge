@@ -4,6 +4,7 @@
 * Support recipe button hidden by other mods #24
 * Support for other mod renderlayers #23
 * Crafting table tags #47
+* Improved Raid Horn model
 * Woodcutter and kiln recipe namespaces are now "charm" not "minecraft"
 * Atlas renders properly left-handedly
 * Disabled oak bookshelf recipe
