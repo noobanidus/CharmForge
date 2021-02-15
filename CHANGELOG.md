@@ -4,6 +4,7 @@
 * Support recipe button hidden by other mods #24
 * Support for other mod renderlayers #23
 * Crafting table tags #47
+* Added zh_tw localization ([Pancakes0228](https://github.com/Pancakes0228)) svenhjol/Charm#434
 * Improved Raid Horn model
 * Woodcutter and kiln recipe namespaces are now "charm" not "minecraft"
 * Atlas renders properly left-handedly
