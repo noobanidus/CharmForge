@@ -128,7 +128,7 @@ public class BeekeeperTradeOffers {
             CompoundNBT honeyTag = new CompoundNBT();
             beesTag.put("Bees", tileEntity.getBees());
             honeyTag.putInt("honey_level", 0);
-            out.setTagInfo("TileEntityTag", beesTag);
+            out.setTagInfo("BlockEntityTag", beesTag);
             out.setTagInfo("BlockStateTag", honeyTag);
             out.setDisplayName(new TranslationTextComponent("item.charm.populated_beehive"));
 
