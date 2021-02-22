@@ -21,6 +21,7 @@ public class PortableEnderChest extends CharmModule {
     public static boolean enableKeybind = true;
 
     public static void openContainer(ServerPlayerEntity player) {
+        player.closeContainer();
         player.world.playSound(null, player.getPosition(), SoundEvents.BLOCK_ENDER_CHEST_OPEN, SoundCategory.PLAYERS, 0.4F, 1.08F);
         player.openContainer(new SimpleNamedContainerProvider((i, inv, p) -> new PortableEnderChestContainer(i, inv, p.getInventoryEnderChest()), LABEL));
     }

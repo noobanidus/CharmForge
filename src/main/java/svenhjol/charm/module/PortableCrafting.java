@@ -20,6 +20,7 @@ public class PortableCrafting extends CharmModule {
     public static boolean enableKeybind = true;
 
     public static void openContainer(ServerPlayerEntity player) {
+        player.closeContainer();
         player.openContainer(new SimpleNamedContainerProvider((i, inv, p) -> new PortableCraftingContainer(i, inv, IWorldPosCallable.of(p.world, p.getPosition())), LABEL));
     }
 }
