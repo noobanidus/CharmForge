@@ -16,4 +16,4 @@ jobs:
         days-before-stale: 14
         days-before-close: 7
         stale-issue-message: 'This issue needs more information and has not seen any activity recently. It will be closed automatically if no response is given.'
-        only-labels: 'needs info,lacking basic info'
+        only-labels: 'needs%20info,lacking%20basic%20info'
