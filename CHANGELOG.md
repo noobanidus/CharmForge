@@ -1,6 +1,7 @@
 # Changelog
 
 ## 2.3.2
+* Fixes #68, #72, #61, #59
 * Support recipe button hidden by other mods #24
 * Support for other mod renderlayers #23
 * Crafting table tags #47
