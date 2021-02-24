@@ -18,6 +18,7 @@ import net.minecraft.world.gen.feature.template.IStructureProcessorType;
 import net.minecraft.world.gen.feature.template.PlacementSettings;
 import net.minecraft.world.gen.feature.template.StructureProcessor;
 import net.minecraft.world.gen.feature.template.Template;
+import svenhjol.charm.base.CharmStructures;
 import svenhjol.charm.base.enums.IVariantMaterial;
 import svenhjol.charm.base.enums.VanillaVariantMaterial;
 import svenhjol.charm.base.handler.ModuleHandler;
@@ -55,7 +56,7 @@ public class DataBlockProcessor extends StructureProcessor {
 
     @Override
     protected IStructureProcessorType<?> getType() {
-        return null;
+        return CharmStructures.DATA_BLOCK_PROCESSOR_TYPE;
     }
 
     public static class DataBlockResolver {
