@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.3.3
+* Restored 2x2 bread and paper recipes
+
 ## 2.3.2
 * Fixes #68, #72, #61, #59
 * Support recipe button hidden by other mods #24
