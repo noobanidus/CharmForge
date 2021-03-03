@@ -3,6 +3,7 @@
 ## 2.3.3
 * Restored 2x2 bread and paper recipes
 * Added missing terracotta firing recipe #82
+* Added mixin blacklisting
 
 ## 2.3.2
 * Fixes #68, #72, #61, #59

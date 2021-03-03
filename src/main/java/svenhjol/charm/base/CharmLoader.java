@@ -86,6 +86,9 @@ public class CharmLoader {
         // always run onCommonSetup
         eachModule(module -> module.onCommonSetup(event));
 
+        // test each module's required mixins
+        eachModule(ModuleHandler.INSTANCE::mixins);
+
         // run dependency check on each module
         eachModule(ModuleHandler.INSTANCE::depends);
 
