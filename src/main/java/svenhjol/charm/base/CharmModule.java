@@ -40,6 +40,14 @@ public abstract class CharmModule {
         // run on server on world load, only executed if module enabled
     }
 
+    /**
+     * Override to provide a list of required mixins.
+     * If any are blacklisted, this module will be disabled.
+     */
+    public List<String> mixins() {
+        return new ArrayList<>();
+    }
+
     public void onCommonSetup(FMLCommonSetupEvent event) {
         // run on both sides, even if module disabled
     }
