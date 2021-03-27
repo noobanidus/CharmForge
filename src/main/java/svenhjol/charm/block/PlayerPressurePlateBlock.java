@@ -1,17 +1,15 @@
 package svenhjol.charm.block;
 
-import net.minecraft.block.AbstractPressurePlateBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.PressurePlateBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
-import net.minecraft.state.BooleanProperty;
 import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -26,16 +24,16 @@ import svenhjol.charm.base.block.ICharmBlock;
 import javax.annotation.Nonnull;
 import java.util.List;
 
-public class PlayerPressurePlateBlock extends AbstractPressurePlateBlock implements ICharmBlock {
-    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+public class PlayerPressurePlateBlock extends PressurePlateBlock implements ICharmBlock {
     private final CharmModule module;
 
     public PlayerPressurePlateBlock(CharmModule module) {
-        super(Block.Properties.create(Material.ROCK, MaterialColor.BLACK)
-                .setRequiresTool()
-                .harvestTool(ToolType.PICKAXE)
-                .doesNotBlockMovement()
-                .hardnessAndResistance(2F, 1200.0F));
+        super(null, Block.Properties.create(Material.ROCK, MaterialColor.BLACK)
+            .setRequiresTool()
+            .harvestTool(ToolType.PICKAXE)
+            .doesNotBlockMovement()
+            .hardnessAndResistance(2F, 1200.0F));
+
         this.module = module;
         register(module, "player_pressure_plate");
         setDefaultState(getDefaultState().with(POWERED, false));
@@ -71,21 +69,5 @@ public class PlayerPressurePlateBlock extends AbstractPressurePlateBlock impleme
         AxisAlignedBB bounds = PRESSURE_AABB.offset(pos);
         List<? extends Entity> entities = worldIn.getEntitiesWithinAABB(PlayerEntity.class, bounds);
         return entities.stream().anyMatch(it -> !it.doesEntityNotTriggerPressurePlate()) ? 15 : 0;
-    }
-
-    @Override
-    protected int getRedstoneStrength(@Nonnull BlockState state) {
-        return state.get(POWERED) ? 15 : 0;
-    }
-
-    @Nonnull
-    @Override
-    protected BlockState setRedstoneStrength(@Nonnull BlockState state, int strength) {
-        return state.with(POWERED, strength > 0);
-    }
-
-    @Override
-    protected void fillStateContainer(StateContainer.Builder<Block, BlockState> builder) {
-        builder.add(POWERED);
     }
 }
