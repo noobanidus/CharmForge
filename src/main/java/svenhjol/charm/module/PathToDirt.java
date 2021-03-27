@@ -41,6 +41,7 @@ public class PathToDirt extends CharmModule {
                 if (!world.isRemote) {
                     world.setBlockState(pos, Blocks.DIRT.getDefaultState(), 11);
                     world.playSound(null, pos, SoundEvents.ITEM_SHOVEL_FLATTEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    player.getCooldownTracker().setCooldown(stack.getItem(), 5);
 
                     // damage the hoe a bit
                     stack.damageItem(1, player, p -> p.swingArm(hand));
