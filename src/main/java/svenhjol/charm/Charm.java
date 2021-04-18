@@ -32,6 +32,7 @@ public class Charm {
             BlockOfGunpowder.class,
             BlockOfSugar.class,
             Bookcases.class,
+            Bumblezone.class,
             CampfiresNoDamage.class,
             Candles.class,
             CaveSpidersDropCobwebs.class,
