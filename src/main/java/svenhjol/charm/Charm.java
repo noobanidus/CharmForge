@@ -1,6 +1,7 @@
 package svenhjol.charm;
 
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.fml.DatagenModLoader;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
 import svenhjol.charm.base.*;
@@ -105,6 +106,8 @@ public class Charm {
         CharmSounds.init();
         CharmTags.init();
 
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CharmClient::new);
+        if (!DatagenModLoader.isRunningDataGen()) {
+            DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> CharmClient::new);
+        }
     }
 }
