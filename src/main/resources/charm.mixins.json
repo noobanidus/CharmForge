@@ -33,7 +33,6 @@
     "ShearsItemMixin",
     "ShulkerBoxSlotMixin",
     "ShulkerBoxTileEntityMixin",
-    "SingleJigsawPieceMixin",
     "SnowBlockMixin",
     "StrayEntityMixin",
     "WanderingTraderSpawnerMixin",
