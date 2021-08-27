@@ -6,6 +6,7 @@ import net.minecraft.block.LanternBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.loot.LootTables;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.LockableLootTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
@@ -187,11 +188,7 @@ public class MineshaftImprovements extends CharmModule {
 
                     world.setBlockState(blockpos, state, 2);
 
-                    TileEntity tileEntity = world.getTileEntity(blockpos);
-                    if (tileEntity instanceof CrateTileEntity) {
-                        ((CrateTileEntity) tileEntity).setLootTable(loot, rand.nextLong());
-                        tileEntity.write(new CompoundNBT());
-                    }
+                    LockableLootTileEntity.setLootTable(world, rand, blockpos, loot);
                 }
             }
         }
